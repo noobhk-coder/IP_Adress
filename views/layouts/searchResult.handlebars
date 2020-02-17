@@ -1,0 +1,48 @@
+{{#if notfound}}
+<p class='not-found'>We're sorry,but no results were found.</p>
+
+
+{{else}}
+
+{{#if numberSearch}}
+<h1>IP Location for last {{searchN}} locations<br><br></h1>
+{{else}}
+<h1>IP Location search from {{date1}} to {{date2}} locations<br><br></h1>
+{{/if}}
+
+{{!-- <ul>
+    {{#each searchResult}}
+    <li>
+        
+        IP : {{this.IPname}} 
+        country : {{this.country}}
+    </li>
+    {{/each}}
+</ul> --}}
+<table class="centered">
+    <thead>
+        <tr>
+            <th>IP Adress </th>
+            <th>Country </th>
+            <th>Latitude </th>
+            <th>Longitude </th>
+            <th>Date Searched </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each searchResult}}
+        <tr>
+            <td>{{this.IPname}}</td>
+            <td>{{this.country}}</td>
+            <td>{{this.lat}}.</td>
+            <td>{{this.lon}}.</td>
+            <td>{{this.date}}.</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{/if}}
+
+<br><br>
+<a href="/">Make another search</a>

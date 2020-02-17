@@ -1,0 +1,58 @@
+<h1>IP Address Locator and Storage Application</h1>
+
+<div>
+  <form action="/ipResult" method="POST" class="search-form">
+    <label>
+      Enter the IP address whose location is needed
+      <input required type="text" name="ipAddress" />
+    </label>
+
+    <button class="waves-effect waves-light btn-small" type="submit">Search
+      <i class="material-icons right">send</i>
+    </button>
+    <button class="waves-effect waves-light btn-small" type="reset">Clear Search</button>
+  </form>
+  <br>
+</div>
+
+<div>
+  <div>
+    <h3>Database History Searcher</h3>
+  </div>
+  <div>
+    <form action='/searchResult' class="result-form">
+      <label>Last How many search IP locations do you want?
+        <input required type="number" name="searchNumber" id="searchNumber" />
+      </label>
+      <button type="submit" class="waves-effect waves-light btn-small">Search
+        <i class="material-icons right">send</i>
+      </button>
+      <button type="reset" class="waves-effect waves-light btn-small">Clear Search</button>
+    </form>
+  </div>
+  <br>
+  <div>
+    <form action='/searchResult' class="result-form">
+      <label for="date">Enter the
+        date range required to search?<br>
+        <label>From:</label>
+        <i class="material-icons prefix">date_range</i>
+        <input required id="date1" type="text" class="datepicker" name="date1" />
+        <label>To:</label>
+        <i class="material-icons prefix">date_range</i>
+        <input required id="date2" type="text" class="datepicker" name="date2" />
+      </label>
+      <button type="submit" class="waves-effect waves-light btn-small">Search
+        <i class="material-icons right">send</i>
+      </button>
+      <button type="reset" class="waves-effect waves-light btn-small">Clear Search</button>
+    </form>
+  </div>
+</div>
+<br>
+<script>
+
+  $(document).ready(function () {
+    $('.datepicker').datepicker({ autoclose: true, format: 'dd/mm/yyyy' });
+  });
+</script>

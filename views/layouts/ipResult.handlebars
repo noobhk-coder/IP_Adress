@@ -1,0 +1,62 @@
+{{#if notfound}}
+<h2 class='not-found'>We're sorry,but no results were found for the IP {{IpAd}}. Hence, not stored.</h2>
+
+
+{{else}}
+<h1>The Entered IP {{IpAd}} is at location</h1>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Region Name</th>
+                <th>City</th>
+                <th>Zip Code</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{IpInfo.country}}</td>
+                <td>{{IpInfo.regionName}}</td>
+                <td>{{IpInfo.city}}</td>
+                <td>{{IpInfo.zip}}</td>
+                <td>{{IpInfo.lat}}</td>
+                <td>{{IpInfo.lon}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <p>Map Location of IP</p>
+</div>
+<div id="map" style="width:70%;height:300px"></div>
+
+<script>
+    var map;
+    function initMap() {
+        console.log("Hello" + {{ IpInfo.lat }})
+    lati = {{ IpInfo.lat }}
+    longi = {{ IpInfo.lon }}
+    var uluru = { lat: lati, lng: longi }
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: uluru,
+        zoom: 8
+    });
+    var marker = new google.maps.Marker({ position: uluru, map: map })
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgCmZMYCBmuNLO_gJOxCWzobV3DLvtevY&callback=initMap" async
+    defer></script>
+
+
+
+{{/if}}
+
+
+<br><br>
+
+<a href="/">Search Location for another IP</a>
