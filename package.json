@@ -15,7 +15,7 @@
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "handlebars": "^4.5.1",
+    "handlebars": "^4.7.7",
     "jquery": "^3.4.1",
     "mongodb": "^3.3.3",
     "uuid": "^3.3.3"
